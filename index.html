@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const firstVisitKey = "hasVisitedBefore";
+
+      // CHANGE THESE LINKS
+      const firstTimeURL = "https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1";
+      const laterTimeURL = "https://www.google.co.in";
+
+      if (!localStorage.getItem(firstVisitKey)) {
+        // First visit
+        localStorage.setItem(firstVisitKey, "true");
+        window.location.href = firstTimeURL;
+      } else {
+        // Subsequent visits
+        window.location.href = laterTimeURL;
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>Redirecting, please wait...</p>
+</body>
+</html>
